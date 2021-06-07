@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.csky.cds.debug.core.CSKY_ABIV2_GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exeWithoutOs" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exeWithoutOs" cleanCommand="rm -rf" description="" id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669" name="Debug" parent="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug" postbuildStep="sh ../$(ProjectPath)/../../../../utilities/elf2hex/hex/aft_build.sh">
+					<folderInfo id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669." name="/" resourcePath="">
+						<toolChain id="cds.managedbuild.toolchain.ckcoregcc.abiv2.exeWithoutOs.debug.678953959" name="CSky abiv2 Elf Toolchain" superClass="cds.managedbuild.toolchain.ckcoregcc.abiv2.exeWithoutOs.debug">
+							<targetPlatform id="cds.managedbuild.target.ckcoregcc.platform.abiv2.exeWithoutOs.debug.395593016" name="Debug Platform" superClass="cds.managedbuild.target.ckcoregcc.platform.abiv2.exeWithoutOs.debug"/>
+							<builder buildPath="${workspace_loc:/test}/Debug" id="cds.managedbuild.target.ckcoregcc.builder.abiv2.exeWithoutOs.debug.843811185" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cds.managedbuild.target.ckcoregcc.builder.abiv2.exeWithoutOs.debug"/>
+							<tool id="cds.managedbuild.tool.ckcoregcc.assembler.abiv2.exeWithoutOs.debug.2140391353" name="CSky Elf Assembler" superClass="cds.managedbuild.tool.ckcoregcc.assembler.abiv2.exeWithoutOs.debug">
+								<option id="ckcoregcc.asm.option.elf.abiv2.cputype.435376571" name="CPUType" superClass="ckcoregcc.asm.option.elf.abiv2.cputype" value="ckcoregcc.assembler.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.both.asm.option.flags.1487362757" superClass="ckcoregcc.both.asm.option.flags" value="-c" valueType="string"/>
+								<option id="ckcoregcc.both.asm.option.include.paths.205347922" name="Include paths (-I)" superClass="ckcoregcc.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../csi_driver/ch2201/include"/>
+									<listOptionValue builtIn="false" value="../../../../../projects/examples/hello_world/configs"/>
+								</option>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.assembler.input2.278759414" superClass="cds.managedbuild.tool.ckcoregcc.assembler.input2"/>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.assembler.input1.969853" superClass="cds.managedbuild.tool.ckcoregcc.assembler.input1"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug.166748743" name="CSky Elf C++ Compiler" superClass="cds.managedbuild.tool.ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug">
+								<option id="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug.option.optimization.level.473887835" name="Optimization Level" superClass="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug.option.optimization.level"/>
+								<option id="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug.option.debugging.level.1512789713" name="Debug Level" superClass="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.debug.option.debugging.level" value="ckcoregcc.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="ckcoregcc.cpp.compiler.option.elf.abiv2.cputype.661091081" name="CPUType" superClass="ckcoregcc.cpp.compiler.option.elf.abiv2.cputype" value="ckcoregcc.cpp.compiler.CPUType.ck802" valueType="enumerated"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.108860879" name="CSky Elf C Compiler" superClass="cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug">
+								<option id="ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.option.optimization.level.385434008" name="Optimization Level" superClass="ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.option.optimization.level" value="ckcoregcc.c.compiler.optimization.level.os" valueType="enumerated"/>
+								<option id="ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.option.debugging.level.1075951897" name="Debug Level" superClass="ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.option.debugging.level" value="ckcoregcc.c.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="ckcoregcc.compiler.option.elf.abiv2.cputype.73022155" name="CPUType" superClass="ckcoregcc.compiler.option.elf.abiv2.cputype" value="ckcoregcc.compiler.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.c.compiler.option.include.paths.662353699" name="Include paths (-I)" superClass="ckcoregcc.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../csi_core/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_driver/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_driver/ch2201/include"/>
+									<listOptionValue builtIn="false" value="../../../../../board/cb2201/include"/>
+									<listOptionValue builtIn="false" value="../../../../../libs/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_kernel/include"/>
+									<listOptionValue builtIn="false" value="../../../../../projects/examples/hello_world/configs"/>
+									<listOptionValue builtIn="false" value="../../../../../projects/tests/dtest/include"/> <listOptionValue builtIn="false" value="../../../../../projects/tests/core/include"/>
+								</option>
+								<option id="ckcoregcc.c.compiler.option.other.ffunctionsection.1091180773" name="Place each function or data item into its own section(-ffunction-sections)" superClass="ckcoregcc.c.compiler.option.other.ffunctionsection" value="true" valueType="boolean"/>
+								<option id="ckcoregcc.c.compiler.option.optimization.flags.455508087" superClass="ckcoregcc.c.compiler.option.optimization.flags" value="-fdata-sections" valueType="string"/>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.c.compiler.input.1816363685" superClass="cds.managedbuild.tool.ckcoregcc.c.compiler.input"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.binary.base.elf.linker.abiv2.512242842" name="CSky Elf Binary Linker" superClass="cds.managedbuild.tool.ckcoregcc.binary.base.elf.linker.abiv2"/>
+							<tool id="cds.managedbuild.tool.ckcoregcc.linker.cygwin.abiv2.exeWithoutOs.debug.582147761" name="CSky Elf Linker" superClass="cds.managedbuild.tool.ckcoregcc.linker.cygwin.abiv2.exeWithoutOs.debug">
+								<option id="ckcoregcc.linker.option.elf.abiv2.cputype.1040369663" name="CPUType" superClass="ckcoregcc.linker.option.elf.abiv2.cputype" value="ckcoregcc.linker.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.link.option.linkfile.1995022222" superClass="ckcoregcc.link.option.linkfile" value="&quot;${workspace_loc:/${ProjName}/board/cb2201/gcc_csky.ld}&quot;" valueType="string"/>
+								<option id="ckcoregcc.link.category.other.1959706630" name="Linker flags" superClass="ckcoregcc.link.category.other" value="-Wl,-zmax-page-size=1024" valueType="string"/>
+								<option id="ckcoregcc.link.option.libs.898988714" name="Libraries (-l)" superClass="ckcoregcc.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="m"/>
+								</option>
+								<option id="ckcoregcc.link.option.paths.1718318359" superClass="ckcoregcc.link.option.paths" valueType="libPaths">
+								</option>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.c.linker.input.1972800233" superClass="cds.managedbuild.tool.ckcoregcc.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="csi_kernel/rhino|csi_kernel/ucos3|csi_kernel/freertosv8.2.3" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="cdsBuildOutput" name="Debug">
+				<buildoutput callgraphfile="false" ckmapfile="false" elfbinaryfile="false" elfdisassemblyfile="false" elfembeddedsource="false" elfinformationfile="false" intelhex="true" mapfile="false" motorolahex="false" objectdisassemblyfile="false" objectembeddedsource="false" objectinformationfile="false" preprocessorfile="false"/>
+			</storageModule>
+		</cconfiguration>
+		<cconfiguration id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.csky.cds.debug.core.CSKY_ABIV2_GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exeWithoutOs" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exeWithoutOs" cleanCommand="rm -rf" description="" id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817" name="Release" parent="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release">
+					<folderInfo id="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817." name="/" resourcePath="">
+						<toolChain id="cds.managedbuild.toolchain.ckcoregcc.abiv2.exeWithoutOs.release.1919191962" name="CSky abiv2 Elf Toolchain" superClass="cds.managedbuild.toolchain.ckcoregcc.abiv2.exeWithoutOs.release">
+							<targetPlatform id="cds.managedbuild.target.ckcoregcc.platform.abiv2.exeWithoutOs.release.2123571395" name="Debug Platform" superClass="cds.managedbuild.target.ckcoregcc.platform.abiv2.exeWithoutOs.release"/>
+							<builder buildPath="${workspace_loc:/test}/Release" id="cds.managedbuild.target.ckcoregcc.builder.abiv2.exeWithoutOs.release.352813083" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cds.managedbuild.target.ckcoregcc.builder.abiv2.exeWithoutOs.release"/>
+							<tool id="cds.managedbuild.tool.ckcoregcc.assembler.abiv2.exeWithoutOs.release.1127903730" name="CSky Elf Assembler" superClass="cds.managedbuild.tool.ckcoregcc.assembler.abiv2.exeWithoutOs.release">
+								<option id="ckcoregcc.asm.option.elf.abiv2.cputype.626923624" name="CPUType" superClass="ckcoregcc.asm.option.elf.abiv2.cputype" value="ckcoregcc.assembler.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.both.asm.option.flags.1487362757" superClass="ckcoregcc.both.asm.option.flags" value="-c" valueType="string"/>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.assembler.input2.709167814" superClass="cds.managedbuild.tool.ckcoregcc.assembler.input2"/>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.assembler.input1.1112614523" superClass="cds.managedbuild.tool.ckcoregcc.assembler.input1"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release.1717268767" name="CSky Elf C++ Compiler" superClass="cds.managedbuild.tool.ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release">
+								<option id="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release.option.optimization.level.2074364995" name="Optimization Level" superClass="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release.option.optimization.level" value="Optimize size (-Os)" valueType="enumerated"/>
+								<option id="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release.option.debugging.level.28478487" name="Debug Level" superClass="ckcoregcc.cpp.compiler.abiv2.exeWithoutOs.release.option.debugging.level" value="ckcoregcc.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="ckcoregcc.cpp.compiler.option.elf.abiv2.cputype.869372374" name="CPUType" superClass="ckcoregcc.cpp.compiler.option.elf.abiv2.cputype" value="ckcoregcc.cpp.compiler.CPUType.ck802" valueType="enumerated"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.1804550981" name="CSky Elf C Compiler" superClass="cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.release">
+								<option id="ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.option.optimization.level.30869426" name="Optimization Level" superClass="ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.option.optimization.level" value="Optimize size (-Os)" valueType="enumerated"/>
+								<option id="ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.option.debugging.level.2010564886" name="Debug Level" superClass="ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.option.debugging.level" value="ckcoregcc.c.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="ckcoregcc.compiler.option.elf.abiv2.cputype.1833618555" name="CPUType" superClass="ckcoregcc.compiler.option.elf.abiv2.cputype" value="ckcoregcc.compiler.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.c.compiler.option.include.paths.821706755" name="Include paths (-I)" superClass="ckcoregcc.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../csi_core/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_driver/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_driver/ch2201/include"/>
+									<listOptionValue builtIn="false" value="../../../../../board/cb2201/include"/>
+									<listOptionValue builtIn="false" value="../../../../../libs/include"/>
+									<listOptionValue builtIn="false" value="../../../../../csi_kernel/include"/>
+									<listOptionValue builtIn="false" value="../../../../../projects/examples/hello_world/configs"/>
+									<listOptionValue builtIn="false" value="../../../../../projects/tests/dtest/include"/> <listOptionValue builtIn="false" value="../../../../../projects/tests/core/include"/>
+								</option>
+								<option id="ckcoregcc.c.compiler.option.other.ffunctionsection.1091998003" name="Place each function or data item into its own section(-ffunction-sections)" superClass="ckcoregcc.c.compiler.option.other.ffunctionsection" value="true" valueType="boolean"/>
+								<option id="ckcoregcc.c.compiler.option.optimization.flags.455508087" superClass="ckcoregcc.c.compiler.option.optimization.flags" value="-fdata-sections" valueType="string"/>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.c.compiler.input.823027310" superClass="cds.managedbuild.tool.ckcoregcc.c.compiler.input"/>
+							</tool>
+							<tool id="cds.managedbuild.tool.ckcoregcc.binary.base.elf.linker.abiv2.1781072434" name="CSky Elf Binary Linker" superClass="cds.managedbuild.tool.ckcoregcc.binary.base.elf.linker.abiv2"/>
+							<tool id="cds.managedbuild.tool.ckcoregcc.linker.cygwin.abiv2.exeWithoutOs.release.1368188654" name="CSky Elf Linker" superClass="cds.managedbuild.tool.ckcoregcc.linker.cygwin.abiv2.exeWithoutOs.release">
+								<option id="ckcoregcc.linker.option.elf.abiv2.cputype.1474562646" name="CPUType" superClass="ckcoregcc.linker.option.elf.abiv2.cputype" value="ckcoregcc.linker.CPUType.ck802" valueType="enumerated"/>
+								<option id="ckcoregcc.link.category.other.1001232980" superClass="ckcoregcc.link.category.other" value="-Wl,-zmax-page-size=1024" valueType="string"/>
+								<option id="ckcoregcc.link.option.libs.1402450051" name="Libraries (-l)" superClass="ckcoregcc.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="m"/>
+								</option>
+								<option id="ckcoregcc.link.option.paths.1718318359" superClass="ckcoregcc.link.option.paths" valueType="libPaths">
+								</option>
+								<inputType id="cds.managedbuild.tool.ckcoregcc.c.linker.input.1685182823" superClass="cds.managedbuild.tool.ckcoregcc.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="csi_kernel/rhino|csi_kernel/ucos3|csi_kernel/freertosv8.2.3" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="cdsBuildOutput" name="Release">
+				<buildoutput callgraphfile="false" ckmapfile="false" elfbinaryfile="false" elfdisassemblyfile="false" elfembeddedsource="false" elfinformationfile="false" intelhex="true" mapfile="false" motorolahex="false" objectdisassemblyfile="false" objectembeddedsource="false" objectinformationfile="false" preprocessorfile="false"/>
+			</storageModule>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="test.cds.managedbuild.target.ckcoregcc.abiv2.exeWithoutOs.1935808622" name="Application Without OS" projectType="cds.managedbuild.target.ckcoregcc.abiv2.exeWithoutOs"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669;cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.debug.1399395669.;cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.debug.108860879;cds.managedbuild.tool.ckcoregcc.c.compiler.input.1816363685">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.csky.cds.managedbuilder.core.CDSGCCWinManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817;cds.managedbuild.config.ckcoregcc.abiv2.exeWithoutOs.release.1526901817.;cds.managedbuild.tool.ckcoregcc.c.compiler.abiv2.exeWithoutOs.release.1804550981;cds.managedbuild.tool.ckcoregcc.c.compiler.input.823027310">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.csky.cds.managedbuilder.core.CDSGCCWinManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="DebugLaunch">
+		<launch BAutoRun="true" BDebugInRom="false" BEcosSystem="false" BFirstReset="false" BLoadImage="true" BNoGraphic="true" BOutputLog="false" BPreloadScript="false" BSecondReset="false" BStopAt="true" Connect="Normal" DebugResetType="Hard Reset" FirstReset="Hard Reset" LockConnect="false" LockDebugResetType="false" LockFirstReset="false" LockLaunchOption="false" LockLaunchSteps="false" LockSResetCommand="false" LockSecondReset="false" Machine="" RegisterGroups="" SResetCommand="0" SecondReset="Soft Reset" SimOtherFlags="" StopAtFunction="main"/>
+		<flash BChipErase="false" BEraseRange="false" BEraseSectors="true" BFlashProgramming="true" BFlashResetandRun="false" BFlashRunMode="false" BFlashVerify="true" BNotErase="false" EraseLength="" EraseStart="" FlashConnect="Normal" FlashDriverPath="" FlashTemplateName="" LockDownload="false" LockFlash="false" LockSResetCommand="false" PathPreDownload="" SResetCommand="0"/>
+		<debugscript ContinueScriptPath="" HResetScriptPath="" InitScriptPath="../../../../utilities/gdb.init" LockScriptSelect="false" PreloadScriptPath="" SResetScriptPath="" StopScriptPath=""/>
+		<connection BJtagServer="false" BLocalJtag="true" BSimulator="false" BUseDDC="true" Delayformtcr="10" ICECLK="2000" JtagServerIP="localhost" JtagServerPort="1025" LocalJTAGFlags="" LockDebugConnection="false"/>
+	</storageModule>
+	<storageModule moduleId="cdsBuildSystem">
+		<version id="4.0.0"/>
+	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+</cproject>
