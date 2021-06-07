@@ -25,7 +25,7 @@ Video: https://www.bilibili.com/video/BV1sq4y1j7DV
   主程序每隔一段时间通过 UART 从 ESP8266 处接收它获取到的粉丝数量，处理图片后，通过 SPI 传输给电子墨水屏进行显示。  
   
 ### 3. 在 ESP8266 上开发联网相关的程序  
-  在 [3.ESP8266-01_Code](./3.ESP8266-01_Code) 中是 ESP8266-01 模块上运行的代码，可使用 Arduino IDE 进行编译并烧写。  
+  在 [3.ESP8266-01_Code](./3.ESP8266-01_Code) 中是 ESP8266-01 模块上运行的代码，可使用 [Arduino IDE](https://www.arduino.cc/en/software) 进行编译并烧写。  
   该部分程序会让 ESP8266 通过设定好的 WiFi 接入互联网，再每隔 5 秒调用 B 站 API 获取特定用户的粉丝数量，然后将数据打包成特定格式通过 UART 发出。此外，代码中还包含了控制 ESP8266-01 模块上的指示灯的程序。
   （其实 ESP8266 可以独立运行应用程序，我们制作 eInkBoard v2 时选用赤焰剑外挂 ESP8266 是为了复刻一代的样式）
 
