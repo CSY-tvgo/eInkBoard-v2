@@ -22,7 +22,7 @@ Video: https://www.bilibili.com/video/BV1sq4y1j7DV
   可将图片转换成声明 C 语言数组的代码，便于写入 MCU 代码。  
   
 ### 2. 在赤焰剑上开发主程序  
-  在 [2.CH2201_Code](./2.CH2201_Code) 中是赤焰剑上运行的代码，可结合平头哥相关库函数，使用[平头哥剑池 CDK 开发工具](https://occ.t-head.cn/development/activities/cdk/)编译并烧写。  
+  在 [2.CH2201_Code](./2.CH2201_Code/hello_world) 中是赤焰剑上运行的代码，可结合平头哥相关库函数，使用[平头哥剑池 CDK 开发工具](https://occ.t-head.cn/development/activities/cdk/)编译并烧写。  
   主程序每隔一段时间通过 UART 从 ESP8266 处接收它获取到的粉丝数量，将对应的数字添加进图像，再通过 SPI 传输给电子墨水屏进行显示。  
   
 ### 3. 在 ESP8266 上开发联网相关的程序  
