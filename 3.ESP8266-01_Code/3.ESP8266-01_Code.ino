@@ -9,11 +9,11 @@ const char *password = "bbbbbbbb"; // XXX: Your password
 
 const char *api = "https://api.bilibili.com/x/relation/stat?vmid=356383684";
 
-WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "ntp.ntsc.ac.cn", 28800);
-
 std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
 HTTPClient https;
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "ntp.ntsc.ac.cn", 28800);
 
 void setup()
 {
@@ -24,8 +24,8 @@ void setup()
     WiFi.begin(ssid, password);
 
     timeClient.begin();
-    // Ignore SSL certificate validation
-    client->setInsecure();
+
+    client->setInsecure(); // Ignore SSL certificate validation
 }
 
 void loop()
@@ -44,6 +44,7 @@ void loop()
         delay(1000);
         Serial.println("[HTTPS] Connect failed.");
     }
+
     // start connection and send HTTP header
     int httpCode = https.GET();
     // httpCode will be negative on error
