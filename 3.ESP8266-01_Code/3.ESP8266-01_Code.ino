@@ -1,10 +1,19 @@
 #include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClientSecureBearSSL.h>
 
 const char *ssid = "aaaaaaaa";     // XXX: Your WiFi ssid
 const char *password = "bbbbbbbb"; // XXX: Your password
 
-const char *host = "api.bilibili.com";
-const int httpPort = 80;
+const char *api = "https://api.bilibili.com/x/relation/stat?vmid=356383684";
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "ntp.ntsc.ac.cn", 28800);
+
+std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
+HTTPClient https;
 
 void setup()
 {
@@ -13,6 +22,10 @@ void setup()
 
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
+
+    timeClient.begin();
+    // Ignore SSL certificate validation
+    client->setInsecure();
 }
 
 void loop()
@@ -26,39 +39,49 @@ void loop()
     }
     analogWrite(LED_BUILTIN, 0);
 
-    WiFiClient client;
-
-    while ((!client.connect(host, httpPort)) && (WiFi.status() == WL_CONNECTED))
+    while (!https.begin(*client, api) && (WiFi.status() == WL_CONNECTED))
     {
         delay(1000);
+        Serial.println("[HTTPS] Connect failed.");
     }
-
-    // XXX:                                 ↓ Your bilibili uid
-    client.print("GET /x/relation/stat?vmid=356383684 HTTP/1.1\r\n"
-                 "Host: api.bilibili.com\r\n\r\n");
-
-    while ((client.connected()) && (WiFi.status() == WL_CONNECTED))
+    // start connection and send HTTP header
+    int httpCode = https.GET();
+    // httpCode will be negative on error
+    if (httpCode > 0)
     {
-        String recv = client.readStringUntil('}') + String("}}");
-
-        int A = recv.indexOf(",") + 2;
-        int B = recv.indexOf("\n", A);
-        String Date = recv.substring(A, B);
-
-        int C = recv.indexOf("follower") + 10;
-        int D = recv.indexOf("}", C);
-        String follower = recv.substring(C, D);
-
-        if (follower.toInt() > 0)
+        // file found at server
+        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY)
         {
-            String output = follower + "," + Date;
-            Serial.println(output);
+            String recv = https.getString();
+            int C = recv.indexOf("follower") + 10;
+            int D = recv.indexOf("}", C);
+            String follower = recv.substring(C, D);
+
+            timeClient.update();
+            unsigned long epochTime = timeClient.getEpochTime();
+            struct tm *ptm = gmtime((time_t *)&epochTime);
+            int YY = ptm->tm_year + 1900;
+            int MM = ptm->tm_mon + 1;
+            int DD = ptm->tm_mday;
+            String hhmm = timeClient.getFormattedTime();
+            char date[30];
+            sprintf(date, "%04d-%02d-%02d ", YY, MM, DD);
+            String Date = String(date) + hhmm + String(" UTC+8");
+
+            if (follower.toInt() > 0)
+            {
+                String output = follower + "," + Date;
+                Serial.println(output);
+            }
+            else
+            {
+                Serial.println("[Decoder]Error : content of <Follower>:\n"+follower);
+            }
         }
-        else
-        {
-            Serial.println("FAIL.");
-        }
-        break;
+    }
+    else
+    {
+        Serial.printf("[HTTPS] GET... failed, error: %s\n", https.errorToString(httpCode).c_str());
     }
 
     for (int i = 0; i < 500; i++)
