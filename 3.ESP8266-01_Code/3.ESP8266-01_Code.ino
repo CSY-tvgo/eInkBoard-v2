@@ -1,10 +1,15 @@
 #include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 
 const char *ssid = "aaaaaaaa";     // XXX: Your WiFi ssid
 const char *password = "bbbbbbbb"; // XXX: Your password
 
 const char *host = "api.bilibili.com";
 const int httpPort = 80;
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "ntp.ntsc.ac.cn", 28800);
 
 void setup()
 {
@@ -13,6 +18,8 @@ void setup()
 
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
+
+    timeClient.begin();
 }
 
 void loop()
@@ -41,9 +48,19 @@ void loop()
     {
         String recv = client.readStringUntil('}') + String("}}");
 
-        int A = recv.indexOf(",") + 2;
-        int B = recv.indexOf("\n", A);
-        String Date = recv.substring(A, B);
+        // int A = recv.indexOf(",") + 2;
+        // int B = recv.indexOf("\n", A);
+        // String Date = recv.substring(A, B);
+        timeClient.update();
+        unsigned long epochTime = timeClient.getEpochTime();
+        struct tm *ptm = gmtime((time_t *)&epochTime);
+        int YY = ptm->tm_year + 1900;
+        int MM = ptm->tm_mon + 1;
+        int DD = ptm->tm_mday;
+        String hhmm = timeClient.getFormattedTime();
+        char date[30];
+        sprintf(date, "%04d-%02d-%02d ", YY, MM, DD);
+        String Date = String(date) + hhmm + String(" UTC+8");
 
         int C = recv.indexOf("follower") + 10;
         int D = recv.indexOf("}", C);
