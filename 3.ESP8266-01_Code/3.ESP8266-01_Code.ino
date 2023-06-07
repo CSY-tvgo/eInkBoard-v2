@@ -6,7 +6,7 @@
 
 const char *ssid = "aaaaaaaa";     // XXX: Your WiFi ssid
 const char *password = "bbbbbbbb"; // XXX: Your password
-
+                                   // XXX:                       ↓ Can be changed to your bilibili uid
 const char *api = "https://api.bilibili.com/x/relation/stat?vmid=356383684";
 
 std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
@@ -25,7 +25,7 @@ void setup()
 
     timeClient.begin();
 
-    client->setInsecure(); // Ignore SSL certificate validation
+    client->setInsecure();  // Ignore SSL certificate validation
 }
 
 void loop()
@@ -44,14 +44,11 @@ void loop()
         delay(1000);
         Serial.println("[HTTPS] Connect failed.");
     }
-
-    // start connection and send HTTP header
-    int httpCode = https.GET();
-    // httpCode will be negative on error
-    if (httpCode > 0)
+    
+    int httpCode = https.GET();  // start connection and send HTTP header
+    if (httpCode > 0)            // httpCode will be negative on error
     {
-        // file found at server
-        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY)
+        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY)  // file found at server
         {
             String recv = https.getString();
             int C = recv.indexOf("follower") + 10;
