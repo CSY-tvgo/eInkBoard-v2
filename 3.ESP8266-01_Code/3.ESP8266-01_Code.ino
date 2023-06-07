@@ -40,7 +40,7 @@ void loop()
         delay(1000);
     }
 
-    // XXX:                                 ↓ Your bilibili uid
+    // XXX:                                 ↓ Can be changed to your bilibili uid
     client.print("GET /x/relation/stat?vmid=356383684 HTTP/1.1\r\n"
                  "Host: api.bilibili.com\r\n\r\n");
 
